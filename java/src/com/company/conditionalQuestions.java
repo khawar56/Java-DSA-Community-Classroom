@@ -117,7 +117,22 @@ public class conditionalQuestions {
             reverse = reverse+number%10;
             number = number/10;
         }
-        System.out.println(reverse);
+        System.out.println(Integer.parseInt(reverse));
+
+        //or without using Strings
+
+        System.out.println();
+        System.out.println("Without using String cast");
+        System.out.println("Enter a number to reverse");
+        int number2 = scanner.input.nextInt();
+        int reverse2 = 0;
+        while(number2>0){
+            reverse2 *= 10;
+            reverse2 += number2%10;
+            number2 = number2/10;
+        }
+        System.out.println(reverse2);
+
     }
 
     public static void main(String[] args) {
