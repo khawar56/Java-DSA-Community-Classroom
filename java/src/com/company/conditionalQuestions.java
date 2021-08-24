@@ -107,6 +107,19 @@ public class conditionalQuestions {
         System.out.println(("Occurrence = "+count2));
     }
 
+    //Question 5
+    //Reverse the given number
+    static void reverse(){
+        System.out.println("Enter a number to reverse");
+        int number = scanner.input.nextInt();
+        String reverse = "";
+        while(number>0){
+            reverse = reverse+number%10;
+            number = number/10;
+        }
+        System.out.println(reverse);
+    }
+
     public static void main(String[] args) {
 
         //Questions
@@ -114,6 +127,7 @@ public class conditionalQuestions {
         caseCheck();
         fibonacci();
         countOccurrences();
+        reverse();
     }
 
 }
