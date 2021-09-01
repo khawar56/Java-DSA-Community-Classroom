@@ -1,0 +1,29 @@
+leetcode question link: https://leetcode.com/problems/richest-customer-wealth/submissions/
+
+Java code:
+
+class Solution {
+    public int maximumWealth(int[][] accounts) {
+        int maxWealth = 0;
+        for(int i =0;i<accounts.length;i++){
+            int wealth = 0;
+            for(int j =0;j<accounts[i].length;j++){
+                wealth = wealth + accounts[i][j];
+            }
+            maxWealth = Math.max(wealth,maxWealth);
+        }
+        return maxWealth;
+    }
+}
+
+
+Python code:
+
+class Solution:
+    def maximumWealth(self, accounts: List[List[int]]) -> int:
+        wealth = 0 
+        maxWealth = 0
+        for i in range(len(accounts)):
+            wealth = sum(accounts[i])
+            maxWealth = max(wealth,maxWealth)
+        return maxWealth    
