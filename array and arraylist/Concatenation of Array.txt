@@ -1,0 +1,27 @@
+leetcode link: https://leetcode.com/problems/concatenation-of-array/submissions/
+
+Java Solution:
+
+class Solution {
+    public int[] getConcatenation(int[] nums) {
+        int length = nums.length;
+        int[] finalarr = new int[2*length];
+        for(int i = 0;i<length;i++){
+            finalarr[i] = nums[i];
+        }
+         for(int i = 0;i<length;i++){
+            finalarr[length+i] = nums[i];
+        }
+        return finalarr;
+    }
+}
+
+
+
+
+Python Solution:
+
+class Solution:
+    def getConcatenation(self, nums: List[int]) -> List[int]:
+        nums+=nums
+        return nums
