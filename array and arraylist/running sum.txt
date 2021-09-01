@@ -1,0 +1,30 @@
+leetcode question link: https://leetcode.com/problems/running-sum-of-1d-array/submissions/
+
+Java solution:
+
+class Solution {
+    public int[] runningSum(int[] nums) {
+        int[] rsum = new int[nums.length];
+        int sum = 0;
+        for(int i=0;i<nums.length;i++){
+            rsum[i] = sum+nums[i];
+            sum = sum+nums[i];
+        }
+        return rsum;
+    }
+}
+
+
+
+Python Solution:
+
+class Solution:
+    def runningSum(self, nums: List[int]) -> List[int]:
+        newList = [] 
+        sums = 0
+        listSize = len(nums)
+    
+        for i in range(listSize):
+            newList.append(nums[i]+sums)
+            sums+=nums[i]
+        return newList
