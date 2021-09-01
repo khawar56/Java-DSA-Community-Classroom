@@ -8,10 +8,7 @@ class Solution {
         int[] finalarr = new int[2*length];
         for(int i = 0;i<length;i++){
             finalarr[i] = nums[i];
-        }
-         for(int i = 0;i<length;i++){
-            finalarr[length+i] = nums[i];
-        }
+            finalarr[length+i] = nums[i]; }
         return finalarr;
     }
 }
