@@ -1,0 +1,33 @@
+leetcode problem link : https://leetcode.com/problems/create-target-array-in-the-given-order/
+
+
+
+Java Solution :
+
+class Solution {
+    public int[] createTargetArray(int[] nums, int[] index) {
+        int target[] = new int[nums.length];
+        for(int i=0;i<nums.length;i++){
+            if(index[i]>=i){
+                target[i] = nums[i];}
+            else{
+                for(int j=nums.length-1; j>index[i];j--){
+                    target[j] = target[j-1];
+                }
+                target[index[i]] = nums[i]; 
+            }   
+            
+        }
+        return target;
+    }
+}
+
+
+Python Solution :
+
+class Solution:
+    def createTargetArray(self, nums: List[int], index: List[int]) -> List[int]:
+        target = []
+        for i,value in zip(index,nums):
+            target.insert(i,value)
+        return target     
