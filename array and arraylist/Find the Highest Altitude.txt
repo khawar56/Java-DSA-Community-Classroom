@@ -1,0 +1,49 @@
+leetcode problem link : https://leetcode.com/problems/find-the-highest-altitude/
+
+
+Java Solution:
+
+class Solution {
+    public int largestAltitude(int[] gain) {
+        int temp = 0;
+        int altitude = 0;
+        for(int g: gain){
+            temp = temp+g;
+            if(temp>altitude){
+                altitude = temp;
+            }
+        }
+        return altitude;
+    }
+}
+
+
+
+
+
+
+
+
+Python Solution:
+
+class Solution:
+    def largestAltitude(self, gain: List[int]) -> int:
+        altitudes = [0]
+        for i in range(len(gain)):
+            altitudes.append(altitudes[i]+gain[i])
+        return max(altitudes)    
+
+
+
+or 
+
+
+class Solution:
+    def largestAltitude(self, gain: List[int]) -> int:
+        alt = 0 
+        temp = 0 
+        for i in gain:
+            temp = temp + i 
+            if temp > alt:
+                alt = temp 
+        return alt   

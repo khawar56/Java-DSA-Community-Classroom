@@ -1,0 +1,46 @@
+leetcode problem link :  https://leetcode.com/problems/count-items-matching-a-rule/
+
+Java Solution :
+
+class Solution {
+    public int countMatches(List<List<String>> items, String ruleKey, String ruleValue) {
+        int count = 0;
+        int key = 0;
+        switch(ruleKey){
+            case "type"-> key = 0;
+            case "color" -> key = 1;
+            case "name" -> key = 2;  
+    
+        }
+        
+        for(List item: items){
+            if(item.get(key).equals(ruleValue)){
+                count++;
+            }
+        }
+        
+        return count;
+    }
+}
+
+
+
+
+
+Python Solution :
+
+class Solution:
+    def countMatches(self, items: List[List[str]], ruleKey: str, ruleValue: str) -> int:
+        if ruleKey == 'type':
+            key = 0
+        elif ruleKey == 'color':
+            key = 1
+        else:
+            key = 2
+        
+        count = 0
+        for item in items:
+            if item[key] == ruleValue:
+                count += 1
+
+        return count 

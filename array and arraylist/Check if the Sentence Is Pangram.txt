@@ -1,0 +1,21 @@
+leetcode problem link : https://leetcode.com/problems/check-if-the-sentence-is-pangram/
+
+
+Java solution : 
+
+class Solution {
+        public boolean checkIfPangram(String sentence) {
+        String alphabet = "abcdefghijklmnopqrstuvwxyz";    
+        for (char ch : alphabet.toCharArray()) {
+            if (sentence.indexOf(ch) == -1) return false;
+        }        
+        return true;
+    }
+}
+
+
+Python solution : 
+
+class Solution:
+    def checkIfPangram(self, sentence: str) -> bool:
+        return len(set(sentence)) == 26
